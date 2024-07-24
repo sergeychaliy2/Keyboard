@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class KeyboardNavigation : MonoBehaviour
 {
-    public Button[] buttons; // Массив кнопок для навигации
+    public Button[] buttons;
     private int selectedIndex = 0;
 
     void Start()
@@ -25,7 +25,7 @@ public class KeyboardNavigation : MonoBehaviour
         {
             SelectNextButton();
         }
-        if (Input.GetKeyDown(KeyCode.Return)) // Нажатие клавиши Enter для выбора кнопки
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             buttons[selectedIndex].onClick.Invoke();
         }
