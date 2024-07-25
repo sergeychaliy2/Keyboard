@@ -73,7 +73,7 @@ MonoBehaviour:
       m_Id: 986388a7-b56e-4b42-9a15-c943e946d3b0
       m_Path: <XRController>{RightHand}/{Primary2DAxis}
       m_Interactions: 
-      m_Processors: 
+      m_Processors: StickDeadzone
       m_Groups: 
       m_Action: Navigation
       m_Flags: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
       m_Action: Confirm Selection
       m_Flags: 0
     m_Flags: 0
+  navigationDelay: 0.1
 --- !u!1001 &1067054880890374493
 PrefabInstance:
   m_ObjectHideFlags: 0

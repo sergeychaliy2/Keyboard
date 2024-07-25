@@ -169,6 +169,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keyboard
       objectReference: {fileID: 0}
+    - target: {fileID: 8950742579102606127, guid: 7d38c9466556edd42913010dc13c3fc7,
+        type: 3}
+      propertyPath: navigationDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950742579102606127, guid: 7d38c9466556edd42913010dc13c3fc7,
+        type: 3}
+      propertyPath: navigationAction.m_SingletonActionBindings.Array.data[0].m_Processors
+      value: StickDeadzone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950742579102606127, guid: 7d38c9466556edd42913010dc13c3fc7,
+        type: 3}
+      propertyPath: confirmSelectionAction.m_SingletonActionBindings.Array.data[0].m_Processors
+      value: StickDeadzone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

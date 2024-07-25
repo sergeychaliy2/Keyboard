@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class ButtonSelector : MonoBehaviour, IButtonSelector
 {
-    [Header("INPUT_ACTION"),Space]
+    [Header("INPUT_ACTION"), Space]
     [SerializeField] private KeyboardManager keyboardManager;
     [SerializeField] private InputAction navigationAction;
     [SerializeField] private InputAction confirmSelectionAction;
+    [SerializeField] private float navigationDelay = 0.03f; //delay between switching
 
     private int currentIndex = -1;
     private int previousIndex = -1;
+    private float lastNavigationTime;
 
     private void OnEnable()
     {
@@ -33,15 +35,22 @@ public class ButtonSelector : MonoBehaviour, IButtonSelector
 
     private void OnNavigate(InputAction.CallbackContext context)
     {
+        if (Time.time - lastNavigationTime < navigationDelay)
+        {
+            return;
+        }
+
         Vector2 axisValue = context.ReadValue<Vector2>();
 
         if (axisValue.x < -0.5f)
         {
             SelectPreviousButton();
+            lastNavigationTime = Time.time;
         }
         else if (axisValue.x > 0.5f)
         {
             SelectNextButton();
+            lastNavigationTime = Time.time;
         }
     }
 
