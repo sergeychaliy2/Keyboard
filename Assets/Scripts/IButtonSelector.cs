@@ -1,7 +1,9 @@
 
 public interface IButtonSelector
 {
-    void SelectPreviousButton();
-    void SelectNextButton();
+    void SelectPreviousButtonInColumn();
+    void SelectNextButtonInColumn();
+    void SelectPreviousButtonInRow();
+    void SelectNextButtonInRow();
     void ConfirmSelection();
 }

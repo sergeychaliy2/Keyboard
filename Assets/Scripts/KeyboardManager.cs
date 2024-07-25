@@ -4,12 +4,20 @@ using UnityEngine.UI;
 
 public class KeyboardManager : MonoBehaviour
 {
-    [Header("KEYBUTTONS"),Space]
-    [SerializeField][Space]
-    public List<Button> keyboardButtons;
+    [Header("BUTTON_COLUMNS"), Space]
+    [SerializeField] private Transform[] columnTransforms;
 
-    private void Start()
+    public List<Button>[] buttonColumns;
+
+    private void Awake()
     {
-        keyboardButtons = new List<Button>(GetComponentsInChildren<Button>());
+        buttonColumns = new List<Button>[columnTransforms.Length];
+
+        for (int i = 0; i < columnTransforms.Length; i++)
+        {
+            buttonColumns[i] = new List<Button>();
+            Button[] buttons = columnTransforms[i].GetComponentsInChildren<Button>();
+            buttonColumns[i].AddRange(buttons);
+        }
     }
 }
